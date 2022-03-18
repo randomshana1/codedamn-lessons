@@ -7,6 +7,7 @@ contract boolFun{
         if (num<0){
             flag = false;
         }
+        //added the flag
         return flag;
     }
 }
