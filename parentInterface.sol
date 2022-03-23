@@ -22,7 +22,7 @@ interface parentInterface{
 // }
 contract child is parentInterface{
 
-    function setter(string memory _str) public override {
+    function setter(string memory _str) public override pure{
         string memory str ;
         
         str = _str;
