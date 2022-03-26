@@ -6,7 +6,7 @@ contract Escrow {
 
     address payable public payer;
     address payable public payee;
-    address payable public thirdParty;
+    address public thirdParty;
     uint256 public amount;
 
     constructor(address payable _payer, address payable _payee, uint256 _amount){
@@ -14,12 +14,11 @@ contract Escrow {
         payer = _payer;
         payee = _payee;
         amount = _amount;
-        thirdParty = payable (msg.sender);
+        thirdParty = msg.sender;
 
     }
 
-    function deposit() public view {
-
+    function deposit() public payable {
         require(payer == msg.sender,"Sender must be the payer");
         require(address(this).balance >= amount,"Cant send more than escrow amount");
 
