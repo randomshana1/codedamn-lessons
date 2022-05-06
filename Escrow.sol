@@ -11,7 +11,7 @@ contract Escrow {
 
     constructor(address payable _payer, address payable _payee, uint256 _amount){
 
-        payer = _payer;
+        payer = payable (_payer);
         payee = _payee;
         amount = _amount;
         thirdParty = msg.sender;
